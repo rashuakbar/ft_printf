@@ -34,7 +34,7 @@ int	ft_printf(const char *input, ...)
 	va_start(args,input);
 	while(stg[i])
 	{
-		if (stg[i] == "%")
+		if (stg[i] == '%')
 			cont += check_op(stg, (i+1), args);
 		else
 			{

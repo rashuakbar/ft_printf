@@ -53,14 +53,14 @@ int	ft_printf_hxbase(unsigned int num, char *base)
 	free(str);
 	return (len);	
 }
-/*
-int main(void)
+
+/*int main(void)
 {
-	int i =31;
-	int c ;
+	int i = 96438;
+	int c, d;
 
 	c = ft_printf_hxbase((unsigned int)i,"0123456789ABCDEF");
-	printf("\n-%X-",i);
-	printf("\n %d\n", c);
+	d = printf("\n%X",i);
+	printf("\n %d -%d-\n", c, d);
 	return (0);
 }*/
