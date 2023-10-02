@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_hxbase.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vimendes <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vimendes <vimendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 15:16:37 by vimendes          #+#    #+#             */
-/*   Updated: 2023/08/17 15:16:40 by vimendes         ###   ########.fr       */
+/*   Updated: 2023/10/02 11:45:59 by vimendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,10 @@ int	count_d(unsigned int n)
 {
 	int	dgt;
 	dgt = 0;
-	if (n <= 15 && n >=10)
-		return (1);
-	while (n > 9)
+	while (n > 15)
 	{
 		dgt++;
-		n = n / 10;
+		n = n / 16;
 	}
 	dgt = dgt + 1;
 	return (dgt);
@@ -36,12 +34,7 @@ char	*ft_itoa_hx(unsigned int nb, char *base)
 	if (nb == 0)
 		return (ft_strdup("0"));
 	i = count_d(nb);
-	if ((nb > 255 && nb <= 999) || (i <=2))
-		index = 1;
-	else if (i <= 8 )
-		index = 2;
-	else 
-		index = 3;
+	index = 1;
 	str = malloc(sizeof(char) * i + 1);
 	if(!str)
 		return (NULL);
@@ -66,13 +59,13 @@ int	ft_printf_hxbase(unsigned int num, char *base)
 	return (len);	
 }
 
-/*int main(void)
+int main(void)
 {
-	int i = 96438;
+	int i = -999;
 	int c, d;
 
 	c = ft_printf_hxbase((unsigned int)i,"0123456789ABCDEF");
 	d = printf("\n%X",i);
 	printf("\n %d -%d-\n", c, d);
 	return (0);
-}*/
+}
