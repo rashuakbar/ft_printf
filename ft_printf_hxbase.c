@@ -6,7 +6,7 @@
 /*   By: vimendes <vimendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 15:16:37 by vimendes          #+#    #+#             */
-/*   Updated: 2023/10/02 11:45:59 by vimendes         ###   ########.fr       */
+/*   Updated: 2023/10/02 11:47:04 by vimendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	ft_printf_hxbase(unsigned int num, char *base)
 	return (len);	
 }
 
-int main(void)
+/*int main(void)
 {
 	int i = -999;
 	int c, d;
@@ -68,4 +68,4 @@ int main(void)
 	d = printf("\n%X",i);
 	printf("\n %d -%d-\n", c, d);
 	return (0);
-}
+}*/
