@@ -15,6 +15,7 @@
 int	count_dg(unsigned long n)
 {
 	int	dgt;
+
 	dgt = 0;
 	while (n > 15)
 	{
@@ -24,6 +25,7 @@ int	count_dg(unsigned long n)
 	dgt = dgt + 1;
 	return (dgt);
 }
+
 char	*ft_hxtoa_long(unsigned long nb, char *base)
 {
 	char	*str;
@@ -35,35 +37,35 @@ char	*ft_hxtoa_long(unsigned long nb, char *base)
 	i = count_dg(nb);
 	index = 1;
 	str = malloc(sizeof(char) * i + 3);
-	if(!str)
+	if (!str)
 		return (NULL);
 	while (nb && index <= i)
 	{
-		str[(i+2)-index] = base[nb % 16];
+		str[(i + 2) - index] = base[nb % 16];
 		nb = nb / 16;
 		index++;
 	}
 	str[1] = 'x';
 	str[0] = '0';
-	str[i+3] = '\0';
+	str[i + 3] = '\0';
 	return (str);
 }
-int ft_printf_pnt(void *pointer)
+
+int	ft_printf_pnt(void *pointer)
 {
-	/*imprimir o endereçao em hexadecimal*/
-	char *adress;
-	unsigned long  pnt; 
-	int	len;
+	unsigned long	pnt;
+	char			*adress;
+	int				len;
 
 	pnt = (unsigned long) pointer;
-	adress = ft_hxtoa_long(pnt,"0123456789abcdef");
+	adress = ft_hxtoa_long(pnt, "0123456789abcdef");
 	if (!adress)
 	{
-		ft_putstr_fd("(nil)",1);
-		return(5);
+		ft_putstr_fd("(nil)", 1);
+		return (5);
 	}
-	len = ft_strlen(adress);	
-	ft_putstr_fd(adress,1);
+	len = ft_strlen(adress);
+	ft_putstr_fd(adress, 1);
 	free (adress);
 	return (len);
 }

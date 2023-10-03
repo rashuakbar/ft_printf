@@ -12,10 +12,10 @@
 
 #include "ft_printf.h"
 
-
 int	count_d(long int n)
 {
 	int	dgt;
+
 	dgt = 0;
 	while (n > 9)
 	{
@@ -25,9 +25,9 @@ int	count_d(long int n)
 	dgt = dgt + 1;
 	return (dgt);
 }
-char *ft_unitoa(unsigned int nbr)
+
+char	*ft_unitoa(unsigned int nbr)
 {
-	/*adaptacao do itoa para unsigned int*/
 	char	*str;
 	int		i;
 	int		index;
@@ -37,11 +37,11 @@ char *ft_unitoa(unsigned int nbr)
 	i = count_d(nbr);
 	index = 1;
 	str = malloc(sizeof(char) * i + 1);
-	if(!str)
+	if (!str)
 		return (NULL);
 	while (nbr && index <= i)
 	{
-		str[i-index] = nbr % 10 + '0';
+		str[i - index] = nbr % 10 + '0';
 		nbr = nbr / 10;
 		index++;
 	}
@@ -51,15 +51,14 @@ char *ft_unitoa(unsigned int nbr)
 
 int	ft_printf_unsgint(unsigned int num)
 {
-	/*converter com adaptação do itoa*/
 	char	*str;
-	int	len;
-	
+	int		len;
+
 	str = ft_unitoa(num);
-	if(!str)
+	if (!str)
 		return (0);
 	len = ft_strlen(str);
-	ft_putstr_fd(str,1);
+	ft_putstr_fd(str, 1);
 	free(str);
 	return (len);
 }

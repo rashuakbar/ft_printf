@@ -14,8 +14,8 @@
 
 int	ft_printf_char(int c)
 {
-	ft_putchar_fd(c,1);
-	return(1);
+	ft_putchar_fd(c, 1);
+	return (1);
 }
 /*int main ()
 {

@@ -16,6 +16,7 @@
 int	count_dt(unsigned int n)
 {
 	int	dgt;
+
 	dgt = 0;
 	while (n > 15)
 	{
@@ -25,6 +26,7 @@ int	count_dt(unsigned int n)
 	dgt = dgt + 1;
 	return (dgt);
 }
+
 char	*ft_itoa_hx(unsigned int nb, char *base)
 {
 	char	*str;
@@ -36,11 +38,11 @@ char	*ft_itoa_hx(unsigned int nb, char *base)
 	i = count_dt(nb);
 	index = 1;
 	str = malloc(sizeof(char) * i + 1);
-	if(!str)
+	if (!str)
 		return (NULL);
 	while (nb && index <= i)
 	{
-		str[i-index] = base[nb % 16];
+		str[i - index] = base[nb % 16];
 		nb = nb / 16;
 		index++;
 	}
@@ -51,12 +53,13 @@ char	*ft_itoa_hx(unsigned int nb, char *base)
 int	ft_printf_hxbase(unsigned int num, char *base)
 {
 	char	*str;
-	int	len;
+	int		len;
+
 	str = ft_itoa_hx(num, base);
 	len = ft_strlen(str);
-	ft_putstr_fd(str,1);
+	ft_putstr_fd(str, 1);
 	free(str);
-	return (len);	
+	return (len);
 }
 
 /*int main(void)
