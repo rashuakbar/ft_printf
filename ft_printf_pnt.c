@@ -6,7 +6,7 @@
 /*   By: vimendes <vimendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 15:14:26 by vimendes          #+#    #+#             */
-/*   Updated: 2023/10/02 12:50:16 by vimendes         ###   ########.fr       */
+/*   Updated: 2023/10/03 11:10:49 by vimendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,18 @@ char	*ft_hxtoa_long(unsigned long nb, char *base)
 		return (ft_strdup("0"));
 	i = count_d(nb);
 	index = 1;
-	str = malloc(sizeof(char) * i + 1);
+	str = malloc(sizeof(char) * i + 3);
 	if(!str)
 		return (NULL);
 	while (nb && index <= i)
 	{
-		str[i-index] = base[nb % 16];
+		str[(i+2)-index] = base[nb % 16];
 		nb = nb / 16;
 		index++;
 	}
-	str[i] = '\0';
+	str[1] = 'x';
+	str[0] = '0';
+	str[i+3] = '\0';
 	return (str);
 }
 int ft_printf_pnt(void *pointer)
@@ -65,13 +67,27 @@ int ft_printf_pnt(void *pointer)
 	free (adress);
 	return (len);
 }
-int main ()
+/*int main ()
 {
-	char *exemplo;
+	void *exemplo;
+	int	ex1, c, d;
+	char *ex2;
 	
-	exemplo = ft_strdup("ola mundo");
+	ex1 = 1;
+	ex2 = ft_strdup("oi");
+	exemplo = ft_strdup("");
 	
-	ft_printf_pnt(exemplo);
-	printf("\n%p",exemplo);
+	c = ft_printf_pnt(exemplo);
+	write(1,"\n",1);
+	d = printf("%p",exemplo);
+	printf("\n %d, -%d- \n", c, d);
+	c = ft_printf_pnt(&ex1);
+	write(1,"\n",1);
+	d = printf("%p",&ex1);
+	printf("\n %d, -%d- \n", c, d);	
+	c = ft_printf_pnt(ex2);
+	write(1,"\n",1);
+	d = printf("%p",ex2);
+	printf("\n %d, -%d- \n", c, d);	
 	return (0);
-}
+}*/
