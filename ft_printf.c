@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vimendes <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vimendes <vimendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 15:14:02 by vimendes          #+#    #+#             */
-/*   Updated: 2023/08/17 15:14:11 by vimendes         ###   ########.fr       */
+/*   Updated: 2023/10/03 11:38:12 by vimendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,3 +58,18 @@ int	ft_printf(const char *input, ...)
 	va_end(args);
 	return (cont);
 }
+/*int main(int argv, char **argc)
+{
+	if (argv < 2)
+	{	
+		write (1,"sem argumentos\n",15);
+		return (0);
+	}
+	int i = 1;
+	while (argc != NULL)
+	{
+		ft_printf(argc[i]);
+		i++;
+	}
+	return(0);
+}*/

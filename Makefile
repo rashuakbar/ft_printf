@@ -4,7 +4,17 @@ CC = cc
 
 FLAGS = -Wall -Wextra -Werror
 
-SRC		=	${wildcard *.c} ${wildcard libft/*.c}
+SRC		=	ft_printf.c \
+			ft_printf_int.c \
+			ft_printf_char.c \
+			ft_printf_string.c \
+			ft_printf_pnt.c \
+			ft_printf_hxbase.c \
+			./libft/ft_strlen.c \
+			./libft/ft_strdup.c \
+			./libft/ft_putstr_fd.c \
+			./libft/ft_putchar_fd.c \
+			./libft/ft_itoa.c
 
 OBJ		=	${SRC:.c=.o}
 
@@ -12,9 +22,6 @@ RM = rm -f
 
 AR = ar -rc
 
-.c.o:
-	${CC} ${FLAGS} -c $< -I . -o $@
-		
 all: $(NAME)
 
 $(NAME): $(OBJ)
