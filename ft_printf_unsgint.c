@@ -6,7 +6,7 @@
 /*   By: vimendes <vimendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 15:17:11 by vimendes          #+#    #+#             */
-/*   Updated: 2023/10/02 12:19:05 by vimendes         ###   ########.fr       */
+/*   Updated: 2023/10/04 12:03:54 by vimendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	ft_printf_unsgint(unsigned int num)
 }
 /*int main ()
 {
-	int c, d, a = -1;
+	int c, d, a = -456;
 	
 	//unsigned int b = -2;
 	
