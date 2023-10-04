@@ -10,6 +10,7 @@ SRC		=	ft_printf.c \
 			ft_printf_string.c \
 			ft_printf_pnt.c \
 			ft_printf_hxbase.c \
+			ft_printf_unsgint.c \
 			./libft/ft_strlen.c \
 			./libft/ft_strdup.c \
 			./libft/ft_putstr_fd.c \

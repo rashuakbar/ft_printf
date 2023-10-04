@@ -6,13 +6,13 @@
 /*   By: vimendes <vimendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 15:14:26 by vimendes          #+#    #+#             */
-/*   Updated: 2023/10/03 11:18:26 by vimendes         ###   ########.fr       */
+/*   Updated: 2023/10/04 12:23:40 by vimendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	count_dg(unsigned long n)
+int	count_dp(unsigned long n)
 {
 	int	dgt;
 
@@ -34,7 +34,7 @@ char	*ft_hxtoa_long(unsigned long nb, char *base)
 
 	if (nb == 0)
 		return (ft_strdup("0"));
-	i = count_dg(nb);
+	i = count_dp(nb);
 	index = 1;
 	str = malloc(sizeof(char) * i + 3);
 	if (!str)

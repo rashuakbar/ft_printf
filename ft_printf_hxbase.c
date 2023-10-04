@@ -6,14 +6,14 @@
 /*   By: vimendes <vimendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 15:16:37 by vimendes          #+#    #+#             */
-/*   Updated: 2023/10/03 11:18:38 by vimendes         ###   ########.fr       */
+/*   Updated: 2023/10/04 12:23:54 by vimendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft/libft.h"
 
-int	count_dt(unsigned int n)
+int	count_dhx(unsigned int n)
 {
 	int	dgt;
 
@@ -35,7 +35,7 @@ char	*ft_itoa_hx(unsigned int nb, char *base)
 
 	if (nb == 0)
 		return (ft_strdup("0"));
-	i = count_dt(nb);
+	i = count_dhx(nb);
 	index = 1;
 	str = malloc(sizeof(char) * i + 1);
 	if (!str)

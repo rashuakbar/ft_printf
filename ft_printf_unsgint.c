@@ -6,13 +6,13 @@
 /*   By: vimendes <vimendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 15:17:11 by vimendes          #+#    #+#             */
-/*   Updated: 2023/10/04 12:03:54 by vimendes         ###   ########.fr       */
+/*   Updated: 2023/10/04 12:23:20 by vimendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	count_d(long int n)
+int	count_du(long int n)
 {
 	int	dgt;
 
@@ -34,7 +34,7 @@ char	*ft_unitoa(unsigned int nbr)
 
 	if (nbr == 0)
 		return (ft_strdup("0"));
-	i = count_d(nbr);
+	i = count_du(nbr);
 	index = 1;
 	str = malloc(sizeof(char) * i + 1);
 	if (!str)
